@@ -11,9 +11,12 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    let statusItem2 = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
    
     let popover = NSPopover();
     var eventMonitor: EventMonitor?;
+    var timer: Timer!;
+    var battery: InternalBattery!
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -23,16 +26,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = #selector(togglePopover(_:));
             
         }
+        if let text = statusItem2.button{
+            text.title = "Number";
+        }
         popover.contentViewController = BatteryViewController.freshController()
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown], handler: {[weak self] event in if let strongSelf = self, strongSelf.popover.isShown{
             strongSelf.closePopover(sender: event)
             }})
-        
+        startTimer();
         // Insert code here to initialize your application
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
+        stopTimer();
         // Insert code here to tear down your application
+    }
+    @objc func updateRemainingText(){
+        var battery = InternalBattery();
+        battery.open();
+        let timeRemaining = battery.timeRemaining();
+        if let text = statusItem2.button{
+            text.title = timeRemaining;
+        }
+        battery.close();
+    }
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateRemainingText), userInfo: nil, repeats: true);
+        timer?.fire()
+        RunLoop.current.add(timer!, forMode: .common)
+        
+    }
+    
+    func stopTimer(){
+        timer?.invalidate()
+        timer = nil
     }
 
 

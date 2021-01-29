@@ -40,6 +40,7 @@ class BatteryViewController: NSViewController {
             timeRemainingLabel.stringValue = "Time Until Charged: \(batteryInfo.timeRemaining)";
             batterylevelIndicator.fillColor = NSColor.orange
         }else{
+            batterylevelIndicator.fillColor = NSColor.green
             timeRemainingLabel.stringValue = "Time Remaining: \(batteryInfo.timeRemaining)";
         }
         batterylevelIndicator.doubleValue = batteryInfo.batteryLevelPerc;
@@ -49,7 +50,7 @@ class BatteryViewController: NSViewController {
     }
     
     func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(showBatteryInfo), userInfo: nil, repeats: true);
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(showBatteryInfo), userInfo: nil, repeats: true);
         timer?.fire()
         RunLoop.current.add(timer!, forMode: .common)
     }
