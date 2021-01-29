@@ -14,6 +14,10 @@
 		694C2BD925C1C4F800A873C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694C2BD725C1C4F800A873C3 /* Main.storyboard */; };
 		694C2BE525C1C4F900A873C3 /* batstatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BE425C1C4F900A873C3 /* batstatTests.swift */; };
 		694C2BF025C1C4F900A873C3 /* batstatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BEF25C1C4F900A873C3 /* batstatUITests.swift */; };
+		694C2BFF25C1C51B00A873C3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694C2BFE25C1C51B00A873C3 /* IOKit.framework */; };
+		69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */; };
+		69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */; };
+		69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D425C4059F005D4A8D /* InternalBattery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		694C2BEB25C1C4F900A873C3 /* batstatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = batstatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		694C2BEF25C1C4F900A873C3 /* batstatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = batstatUITests.swift; sourceTree = "<group>"; };
 		694C2BF125C1C4F900A873C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		694C2BFE25C1C51B00A873C3 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
+		69D9C0D425C4059F005D4A8D /* InternalBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalBattery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694C2BFF25C1C51B00A873C3 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +91,7 @@
 				694C2BE325C1C4F900A873C3 /* batstatTests */,
 				694C2BEE25C1C4F900A873C3 /* batstatUITests */,
 				694C2BCC25C1C4F700A873C3 /* Products */,
+				694C2BFD25C1C51A00A873C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +115,9 @@
 				694C2BDA25C1C4F800A873C3 /* Info.plist */,
 				694C2BDB25C1C4F800A873C3 /* batstat.entitlements */,
 				694C2BD225C1C4F700A873C3 /* batstat.xcdatamodeld */,
+				69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */,
+				69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */,
+				69D9C0D425C4059F005D4A8D /* InternalBattery.swift */,
 			);
 			path = batstat;
 			sourceTree = "<group>";
@@ -125,6 +138,14 @@
 				694C2BF125C1C4F900A873C3 /* Info.plist */,
 			);
 			path = batstatUITests;
+			sourceTree = "<group>";
+		};
+		694C2BFD25C1C51A00A873C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				694C2BFE25C1C51B00A873C3 /* IOKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +216,11 @@
 				TargetAttributes = {
 					694C2BCA25C1C4F700A873C3 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					694C2BDF25C1C4F900A873C3 = {
 						CreatedOnToolsVersion = 10.1;
@@ -206,7 +232,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "batstat" */;
+			buildConfigurationList = 694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "BatStat" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -257,8 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */,
 				694C2BD125C1C4F700A873C3 /* ViewController.swift in Sources */,
+				69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */,
 				694C2BCF25C1C4F700A873C3 /* AppDelegate.swift in Sources */,
+				69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */,
 				694C2BD425C1C4F700A873C3 /* batstat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +454,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = batstat/batstat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = batstat/Info.plist;
@@ -443,7 +471,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = batstat/batstat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = batstat/Info.plist;
@@ -473,7 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsolomons.batstatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/batstat.app/Contents/MacOS/batstat";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatStat.temp_caseinsensitive_rename.app/Contents/MacOS/BatStat.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -493,7 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsolomons.batstatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/batstat.app/Contents/MacOS/batstat";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatStat.temp_caseinsensitive_rename.app/Contents/MacOS/BatStat.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -538,7 +565,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "batstat" */ = {
+		694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "BatStat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				694C2BF225C1C4F900A873C3 /* Debug */,

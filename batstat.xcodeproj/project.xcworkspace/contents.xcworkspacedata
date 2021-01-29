@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:batstat.xcodeproj">
+      location = "self:/Users/rerolfe/Documents/Programming/Mac Apps/batstat/BatStat.xcodeproj">
    </FileRef>
 </Workspace>
