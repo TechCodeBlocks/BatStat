@@ -33,8 +33,15 @@ class BatteryViewController: NSViewController {
     }
     
     @objc fileprivate func showBatteryInfo(){
-        var batteryInfo = battery.getPopoverBatteryInfo();
-        timeRemainingLabel.stringValue = "Time Remaining: \(batteryInfo.timeRemaining)";
+        let batteryInfo = battery.getPopoverBatteryInfo();
+        let isCharging = battery.isCharging();
+    
+        if(isCharging){
+            timeRemainingLabel.stringValue = "Time Until Charged: \(batteryInfo.timeRemaining)";
+            batterylevelIndicator.fillColor = NSColor.orange
+        }else{
+            timeRemainingLabel.stringValue = "Time Remaining: \(batteryInfo.timeRemaining)";
+        }
         batterylevelIndicator.doubleValue = batteryInfo.batteryLevelPerc;
         designCapacityIndicator.doubleValue = batteryInfo.batteryDesCapPerc;
         batteryLevelLabel.stringValue = "Current Charge: \(batteryInfo.batteryLevelPerc)%";
