@@ -15,15 +15,15 @@ public struct InternalBattery{
     
     //Battery property Keys, currently only ones that will be used.
     fileprivate enum Key: String {
-        case ACPowered          = "ExternalConnected"
         case Amperage           = "Amperage"
         case CurrentCapacity    = "CurrentCapacity"
         //Add cycle count later
         case DesignCapacity     = "DesignCapacity"
         //Add cycle count and fully charged indicators later
+        case CycleCount         = "CycleCount"
         case IsCharging         = "IsCharging"
         case MaxCapacity        = "MaxCapacity"
-        //add temperature later
+        case Temperature        = "Temperature"
         case TimeRemaining      = "TimeRemaining"
     }
     
@@ -62,6 +62,47 @@ public struct InternalBattery{
         
         
     }
+    public func getBatteryDetailedInfo() -> [[String: String]]{
+        let currentCharge: String =  String(currentCapacity()) + "mA h";
+        let maxCharge: String = String(maxCapacity()) + "mA h";
+        let designCharge: String = String(designCapacity()) + "mA h";
+        let currentCycleCount: String = String(cycleCount());
+        let currentAmperage: String = String(amperage()) + "Amps";
+        let currentTemperature: String =  String(temperature()) + "°C";
+        let charging = isCharging();
+        if charging {
+            let info = [
+                        ["propertyName":"Current Charge",
+                         "value":currentCharge],
+                        ["propertyName":"Maximum Charge",
+                         "value":maxCharge],
+                        ["propertyName":"Design Capacity",
+                         "value":designCharge],
+                        ["propertyName":"Cycle Count",
+                         "value":currentCycleCount],
+                        ["propertyName":"Charging With",
+                         "value": currentAmperage],
+                        ["propertyName":"Tempertature",
+                         "value":currentTemperature]
+            ] as [[String:String]];
+            return info;
+        }
+        let info = [
+                    ["propertyName":"Current Charge",
+                     "value":currentCharge],
+                    ["propertyName":"Maximum Charge",
+                     "value":maxCharge],
+                    ["propertyName":"Design Capacity",
+                     "value":designCharge],
+                    ["propertyName":"Cycle Count",
+                     "value":currentCycleCount],
+                    ["propertyName":"Discharging With",
+                     "value":currentAmperage],
+                    ["propertyName":"Tempertature",
+                     "value":currentTemperature]
+        ] as [[String:String]];
+        return info;
+    }
     
     //Provides time remaining as a formatted string in format Hours:Minutes
     public func timeRemaining() -> String{
@@ -92,5 +133,21 @@ public struct InternalBattery{
         let retVal = IORegistryEntryCreateCFProperty(service, Key.TimeRemaining.rawValue as CFString!, kCFAllocatorDefault, 0);
         return retVal!.takeUnretainedValue() as! Int;
     }
+    
+    private func cycleCount() -> Int{
+        let retVal = IORegistryEntryCreateCFProperty(service, Key.CycleCount.rawValue as CFString, kCFAllocatorDefault, 0);
+        return retVal?.takeUnretainedValue() as! Int;
+        
+    }
+    private func amperage() -> Int{
+        let retVal = IORegistryEntryCreateCFProperty(service, Key.Amperage.rawValue as CFString, kCFAllocatorDefault, 0);
+        return retVal?.takeUnretainedValue() as! Int;
+    }
+    private func temperature() -> Double{
+        let retVal = IORegistryEntryCreateCFProperty(service, Key.Temperature.rawValue as CFString, kCFAllocatorDefault, 0);
+        let temp = retVal?.takeUnretainedValue() as! Double / 100;
+        return ceil(temp);
+    }
+    
     
 }

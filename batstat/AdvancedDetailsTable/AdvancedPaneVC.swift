@@ -17,29 +17,20 @@ class AdvancedPaneVC: NSViewController {
     override func viewDidLoad() {
         tableView.delegate = self;
         tableView.dataSource = self;
-        batteryItems = [["propertyName":"Test", "value":"testing"], ["propertyName":"CycleCount", "value":"100"]]
-        print("pane loaded")
+        
+        
         super.viewDidLoad()
         // Do view setup here.
     }
     override func viewWillAppear(){
+        var battery = InternalBattery();
+        battery.open();
+        batteryItems = battery.getBatteryDetailedInfo();
+        battery.close();
         super.viewWillAppear();
         tableView.reloadData();
     }
     
-}
-extension AdvancedPaneVC{
-    
-    static func freshController() -> AdvancedPaneVC{
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil);
-        let identifier = NSStoryboard.SceneIdentifier("AdvancedPaneVC");
-        guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? AdvancedPaneVC else {
-            fatalError("Why can't I find AdvancedPaneVC - Check Main.Storyboard");
-        }
-        
-        print("loaded vc")
-        return viewController
-    }
 }
 
 extension AdvancedPaneVC: NSTableViewDataSource{
@@ -62,16 +53,15 @@ extension AdvancedPaneVC: NSTableViewDelegate{
         
         if tableColumn == tableView.tableColumns[0]{
             text = item["propertyName"] as! String;
-            print("Column0")
+            
             cellIdentifier = CellIdentifiers.PropertyCell
         } else if tableColumn == tableView.tableColumns[1]{
             text = item["value"] as! String;
             cellIdentifier = CellIdentifiers.ValueCell
-            print("Column1")
+            
         }
         
         if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: self) as? NSTableCellView{
-            print(text)
             cell.textField?.stringValue = text;
             return cell;
         }
