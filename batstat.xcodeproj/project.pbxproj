@@ -18,6 +18,7 @@
 		69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */; };
 		69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */; };
 		69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D425C4059F005D4A8D /* InternalBattery.swift */; };
+		B4B24C8925CAA7CE0065C507 /* AdvancedPaneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
 		69D9C0D425C4059F005D4A8D /* InternalBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalBattery.swift; sourceTree = "<group>"; };
+		B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPaneVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		694C2BCD25C1C4F700A873C3 /* batstat */ = {
 			isa = PBXGroup;
 			children = (
+				B4B24C8725CAA7820065C507 /* AdvancedDetailsTable */,
 				694C2BCE25C1C4F700A873C3 /* AppDelegate.swift */,
 				694C2BD025C1C4F700A873C3 /* ViewController.swift */,
 				694C2BD525C1C4F800A873C3 /* Assets.xcassets */,
@@ -146,6 +149,14 @@
 				694C2BFE25C1C51B00A873C3 /* IOKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4B24C8725CAA7820065C507 /* AdvancedDetailsTable */ = {
+			isa = PBXGroup;
+			children = (
+				B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */,
+			);
+			path = AdvancedDetailsTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +243,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "BatStat" */;
+			buildConfigurationList = 694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "batstat" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -285,6 +296,7 @@
 			files = (
 				69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */,
 				694C2BD125C1C4F700A873C3 /* ViewController.swift in Sources */,
+				B4B24C8925CAA7CE0065C507 /* AdvancedPaneVC.swift in Sources */,
 				69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */,
 				694C2BCF25C1C4F700A873C3 /* AppDelegate.swift in Sources */,
 				69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */,
@@ -565,7 +577,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "BatStat" */ = {
+		694C2BC625C1C4F700A873C3 /* Build configuration list for PBXProject "batstat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				694C2BF225C1C4F900A873C3 /* Debug */,
