@@ -20,6 +20,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+       // BatHistoryManager.storeBatteryInfo(data: [["Date":"sddfd", "Capacity":"300mah"],
+       //                                           ["Date":"abcf", "Capacity":"3000mah"],
+        //                                          ["Date":"akjks", "Capacity":"3600mah"]])
+    
         
         if let button = statusItem.button{
             button.image = NSImage(named: NSImage.Name("bat"));

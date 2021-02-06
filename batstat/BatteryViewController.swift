@@ -15,6 +15,8 @@ class BatteryViewController: NSViewController {
     @IBOutlet weak var designCapacityLevel: NSTextField!;
     @IBOutlet weak var batterylevelIndicator: NSLevelIndicator!;
     @IBOutlet weak var designCapacityIndicator: NSLevelIndicator!;
+    @IBOutlet weak var addHistory: NSButton!;
+    
     var timer: Timer!;
     var battery: InternalBattery!;
 
@@ -30,6 +32,19 @@ class BatteryViewController: NSViewController {
     override func viewDidDisappear() {
         stopTimer();
         battery.close();
+    }
+    
+    @IBAction func storeDataButtonClicked(_ sender: NSButton){
+        var existingData = BatHistoryManager.getStoredBatteryInfo();
+        let today = Date()
+        let formatter1 = DateFormatter()
+        formatter1.dateStyle = .short
+        let dateString = formatter1.string(from: today);
+        existingData.append(["Date":dateString,"Capacity":"3600mah"]);
+        BatHistoryManager.storeBatteryInfo(data: existingData);
+        
+        
+        
     }
     
     @objc fileprivate func showBatteryInfo(){

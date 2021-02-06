@@ -18,6 +18,8 @@
 		69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */; };
 		69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */; };
 		69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D425C4059F005D4A8D /* InternalBattery.swift */; };
+		B40CAA5125CF0231008106C2 /* DesignCapacityHistoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CAA5025CF0231008106C2 /* DesignCapacityHistoryContainer.swift */; };
+		B40CAA5925CF04AD008106C2 /* BatHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CAA5825CF04AD008106C2 /* BatHistoryManager.swift */; };
 		B4B24C8925CAA7CE0065C507 /* AdvancedPaneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
 		69D9C0D425C4059F005D4A8D /* InternalBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalBattery.swift; sourceTree = "<group>"; };
+		B40CAA5025CF0231008106C2 /* DesignCapacityHistoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCapacityHistoryContainer.swift; sourceTree = "<group>"; };
+		B40CAA5825CF04AD008106C2 /* BatHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatHistoryManager.swift; sourceTree = "<group>"; };
 		B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPaneVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +114,7 @@
 		694C2BCD25C1C4F700A873C3 /* batstat */ = {
 			isa = PBXGroup;
 			children = (
+				B40CAA4F25CF01F3008106C2 /* DataPersistence */,
 				B4B24C8725CAA7820065C507 /* AdvancedDetailsTable */,
 				694C2BCE25C1C4F700A873C3 /* AppDelegate.swift */,
 				694C2BD025C1C4F700A873C3 /* ViewController.swift */,
@@ -149,6 +154,15 @@
 				694C2BFE25C1C51B00A873C3 /* IOKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B40CAA4F25CF01F3008106C2 /* DataPersistence */ = {
+			isa = PBXGroup;
+			children = (
+				B40CAA5025CF0231008106C2 /* DesignCapacityHistoryContainer.swift */,
+				B40CAA5825CF04AD008106C2 /* BatHistoryManager.swift */,
+			);
+			path = DataPersistence;
 			sourceTree = "<group>";
 		};
 		B4B24C8725CAA7820065C507 /* AdvancedDetailsTable */ = {
@@ -298,8 +312,10 @@
 				694C2BD125C1C4F700A873C3 /* ViewController.swift in Sources */,
 				B4B24C8925CAA7CE0065C507 /* AdvancedPaneVC.swift in Sources */,
 				69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */,
+				B40CAA5125CF0231008106C2 /* DesignCapacityHistoryContainer.swift in Sources */,
 				694C2BCF25C1C4F700A873C3 /* AppDelegate.swift in Sources */,
 				69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */,
+				B40CAA5925CF04AD008106C2 /* BatHistoryManager.swift in Sources */,
 				694C2BD425C1C4F700A873C3 /* batstat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

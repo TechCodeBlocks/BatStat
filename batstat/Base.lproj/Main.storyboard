@@ -140,14 +140,14 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="R01-YR-jxc" viewBased="YES" id="Zel-ML-yoD">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="416"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="416"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <tableViewGridLines key="gridStyleMask" vertical="YES" horizontal="YES"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="BatteryPropertyID" width="200" minWidth="40" maxWidth="1000" id="0Xx-Pz-yJe">
+                                                <tableColumn identifier="BatteryPropertyID" width="199" minWidth="40" maxWidth="1000" id="0Xx-Pz-yJe">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Battery Property">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -160,11 +160,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="PropertyCellID" id="RTa-kc-n90">
-                                                            <rect key="frame" x="1" y="1" width="200" height="17"/>
+                                                            <rect key="frame" x="1" y="1" width="199" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13B-Dj-UxJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="199" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" id="pYh-JO-LQp">
                                                                         <font key="font" metaFont="system"/>
@@ -192,7 +192,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="ValueCellID" id="gzS-0V-oAR">
-                                                            <rect key="frame" x="204" y="1" width="105" height="17"/>
+                                                            <rect key="frame" x="203" y="1" width="105" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sya-jd-N2D">
@@ -215,7 +215,7 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="eFj-wv-9fx">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="eFj-wv-9fx">
                                     <rect key="frame" x="1" y="423" width="310" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -224,7 +224,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="R01-YR-jxc">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="23"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
@@ -338,6 +338,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="storeDataButtonClicked:" target="XfG-lQ-9wD" id="cd5-sX-AbX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -357,6 +360,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addHistory" destination="t5U-XS-BRV" id="Al7-kJ-rJa"/>
                         <outlet property="batteryLevelLabel" destination="s0M-NU-pRS" id="TRx-Y0-v31"/>
                         <outlet property="batterylevelIndicator" destination="IXW-B5-aLN" id="krt-jc-XPN"/>
                         <outlet property="designCapacityIndicator" destination="AaY-al-Rln" id="asG-uH-kna"/>
