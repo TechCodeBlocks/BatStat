@@ -23,7 +23,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
        // BatHistoryManager.storeBatteryInfo(data: [["Date":"sddfd", "Capacity":"300mah"],
        //                                           ["Date":"abcf", "Capacity":"3000mah"],
         //                                          ["Date":"akjks", "Capacity":"3600mah"]])
-    
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if(!launchedBefore){
+            
+            BatHistoryManager.initStorage();
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
         
         if let button = statusItem.button{
             button.image = NSImage(named: NSImage.Name("bat"));
@@ -40,6 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         startTimer();
         // Insert code here to initialize your application
     }
+    
 
     func applicationWillTerminate(_ aNotification: Notification) {
         stopTimer();

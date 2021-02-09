@@ -9,6 +9,18 @@
 import Foundation
 
 class BatHistoryManager{
+    static func initStorage(){
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("DesCapHistory");
+        let initData = [["Date":"1/1/71","Capacity":"FULL"]]
+        do{
+            let data = try NSKeyedArchiver.archivedData(withRootObject: initData)
+            try data.write(to: path);
+            
+        }catch{
+            print("error writing initiating data");
+        }
+        
+    }
     static func getStoredBatteryInfo()-> [[String:String]]{
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("DesCapHistory");
         do{

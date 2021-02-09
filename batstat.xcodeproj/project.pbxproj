@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690C3DD825D275B700DBB823 /* ChargeHistoryPaneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C3DD725D275B700DBB823 /* ChargeHistoryPaneVC.swift */; };
 		694C2BCF25C1C4F700A873C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BCE25C1C4F700A873C3 /* AppDelegate.swift */; };
 		694C2BD125C1C4F700A873C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BD025C1C4F700A873C3 /* ViewController.swift */; };
 		694C2BD425C1C4F700A873C3 /* batstat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BD225C1C4F700A873C3 /* batstat.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690C3DD725D275B700DBB823 /* ChargeHistoryPaneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeHistoryPaneVC.swift; sourceTree = "<group>"; };
 		694C2BCB25C1C4F700A873C3 /* batstat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = batstat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		694C2BCE25C1C4F700A873C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		694C2BD025C1C4F700A873C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */,
+				690C3DD725D275B700DBB823 /* ChargeHistoryPaneVC.swift */,
 			);
 			path = AdvancedDetailsTable;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */,
+				690C3DD825D275B700DBB823 /* ChargeHistoryPaneVC.swift in Sources */,
 				694C2BD125C1C4F700A873C3 /* ViewController.swift in Sources */,
 				B4B24C8925CAA7CE0065C507 /* AdvancedPaneVC.swift in Sources */,
 				69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */,
@@ -482,8 +486,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6Y322FZ77K;
 				INFOPLIST_FILE = batstat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -491,6 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsolomons.batstat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -499,8 +506,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6Y322FZ77K;
 				INFOPLIST_FILE = batstat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -508,6 +517,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminsolomons.batstat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

@@ -40,7 +40,8 @@ class BatteryViewController: NSViewController {
         let formatter1 = DateFormatter()
         formatter1.dateStyle = .short
         let dateString = formatter1.string(from: today);
-        existingData.append(["Date":dateString,"Capacity":"3600mah"]);
+        let maxCharge = battery.getBatteryDetailedInfo()[1]["value"] as! String;
+        existingData.append(["Date":dateString,"Capacity":maxCharge]);
         BatHistoryManager.storeBatteryInfo(data: existingData);
         
         
