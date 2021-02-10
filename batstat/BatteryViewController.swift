@@ -33,7 +33,10 @@ class BatteryViewController: NSViewController {
         stopTimer();
         battery.close();
     }
-    
+    /* Add a new reading to the info history.
+        - Reads in existing values
+        - Appends the new values to the existing list
+        - Writes the new list to the file*/
     @IBAction func storeDataButtonClicked(_ sender: NSButton){
         var existingData = BatHistoryManager.getStoredBatteryInfo();
         let today = Date()
@@ -47,11 +50,11 @@ class BatteryViewController: NSViewController {
         
         
     }
-    
+    //Will run on a timer every 2 seconds
     @objc fileprivate func showBatteryInfo(){
         let batteryInfo = battery.getPopoverBatteryInfo();
         let isCharging = battery.isCharging();
-    
+        //Add UI nicities for charging/discharging
         if(isCharging){
             timeRemainingLabel.stringValue = "Time Until Charged: \(batteryInfo.timeRemaining)";
             batterylevelIndicator.fillColor = NSColor.orange
@@ -85,7 +88,6 @@ extension BatteryViewController{
             fatalError("Why can't I find BatteryViewController - Check Main.Storyboard");
         }
         
-        print("loaded vc")
         return viewController
     }
 }

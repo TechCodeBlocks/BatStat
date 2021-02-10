@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -100,7 +100,7 @@
         <!--Tab View Controller-->
         <scene sceneID="uUr-f3-NTE">
             <objects>
-                <tabViewController selectedTabViewItemIndex="2" id="ReG-p6-mR4" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" id="ReG-p6-mR4" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem identifier="" id="CbD-qV-9Ve"/>
                         <tabViewItem identifier="" id="s4B-QG-uSj"/>
@@ -149,7 +149,6 @@
                                             <tableColumns>
                                                 <tableColumn identifier="BatteryPropertyID" width="199" minWidth="40" maxWidth="1000" id="0Xx-Pz-yJe">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Battery Property">
-                                                        <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -182,7 +181,6 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="ValueID" width="105" minWidth="40" maxWidth="1000" id="LXG-sD-IxX">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Value">
-                                                        <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -263,14 +261,13 @@
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="ZTh-fT-njK" viewBased="YES" id="nuc-Su-iLR">
                                             <rect key="frame" x="0.0" y="0.0" width="298" height="416"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn editable="NO" width="152" minWidth="40" maxWidth="1000" id="Fsl-De-Uwx">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Date">
-                                                        <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -303,7 +300,6 @@
                                                 </tableColumn>
                                                 <tableColumn editable="NO" width="140" minWidth="40" maxWidth="1000" id="gfH-Hj-PfO">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Maximum Capacity">
-                                                        <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -376,14 +372,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <levelIndicator verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IXW-B5-aLN">
-                                <rect key="frame" x="20" y="84" width="361" height="24"/>
+                                <rect key="frame" x="20" y="82" width="360" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="42O-SR-na5"/>
                                 </constraints>
                                 <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="100" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="tpS-SF-FUr"/>
                             </levelIndicator>
                             <levelIndicator verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AaY-al-Rln">
-                                <rect key="frame" x="20" y="16" width="361" height="20"/>
+                                <rect key="frame" x="20" y="14" width="360" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="51f-83-zcK"/>
                                     <constraint firstAttribute="width" constant="360" id="Ssc-Kg-A4g"/>

@@ -7,7 +7,9 @@
 //
 
 import Cocoa
-
+/* The AdvancedPane will contain detailed information about the battery
+ displayed in a table view. This controller implements and sets up the
+ table view*/
 class AdvancedPaneVC: NSViewController {
     @IBOutlet weak var tableView: NSTableView!;
     var batteryItems = [[String:String]]();
@@ -17,10 +19,8 @@ class AdvancedPaneVC: NSViewController {
     override func viewDidLoad() {
         tableView.delegate = self;
         tableView.dataSource = self;
-        
-        
         super.viewDidLoad()
-        // Do view setup here.
+        
     }
     override func viewWillAppear(){
         var battery = InternalBattery();

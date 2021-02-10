@@ -9,6 +9,11 @@
 import Foundation
 
 class BatHistoryManager{
+    /*Will run only on the first time that the app opens on a users
+     laptop. Initialises the data-store with a piece of dummy data.
+     This is needed as if they open the battery history view before adding
+     a new item and the storage hasn't been initiated an error will occur
+     and the  app will hang*/
     static func initStorage(){
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("DesCapHistory");
         let initData = [["Date":"1/1/71","Capacity":"FULL"]]
@@ -21,6 +26,9 @@ class BatHistoryManager{
         }
         
     }
+    /* Loads the data that has been written to the device and returns it.
+     Data is in the format of a list of dictionaries.
+     Each dictionary contains a date and a capacity in milli-amp hours*/
     static func getStoredBatteryInfo()-> [[String:String]]{
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("DesCapHistory");
         do{
@@ -34,6 +42,7 @@ class BatHistoryManager{
         }
         return [["Error":"Error"]];
     }
+    /* Writes the data to the document containing historical information*/
     
     static func storeBatteryInfo(data: [[String:String]]){
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("DesCapHistory");

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		690C3DD825D275B700DBB823 /* ChargeHistoryPaneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C3DD725D275B700DBB823 /* ChargeHistoryPaneVC.swift */; };
 		694C2BCF25C1C4F700A873C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BCE25C1C4F700A873C3 /* AppDelegate.swift */; };
-		694C2BD125C1C4F700A873C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BD025C1C4F700A873C3 /* ViewController.swift */; };
-		694C2BD425C1C4F700A873C3 /* batstat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BD225C1C4F700A873C3 /* batstat.xcdatamodeld */; };
 		694C2BD625C1C4F800A873C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 694C2BD525C1C4F800A873C3 /* Assets.xcassets */; };
 		694C2BD925C1C4F800A873C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694C2BD725C1C4F800A873C3 /* Main.storyboard */; };
 		694C2BE525C1C4F900A873C3 /* batstatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C2BE425C1C4F900A873C3 /* batstatTests.swift */; };
@@ -19,7 +17,6 @@
 		69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */; };
 		69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */; };
 		69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C0D425C4059F005D4A8D /* InternalBattery.swift */; };
-		B40CAA5125CF0231008106C2 /* DesignCapacityHistoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CAA5025CF0231008106C2 /* DesignCapacityHistoryContainer.swift */; };
 		B40CAA5925CF04AD008106C2 /* BatHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CAA5825CF04AD008106C2 /* BatHistoryManager.swift */; };
 		B4B24C8925CAA7CE0065C507 /* AdvancedPaneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */; };
 /* End PBXBuildFile section */
@@ -45,8 +42,6 @@
 		690C3DD725D275B700DBB823 /* ChargeHistoryPaneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeHistoryPaneVC.swift; sourceTree = "<group>"; };
 		694C2BCB25C1C4F700A873C3 /* batstat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = batstat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		694C2BCE25C1C4F700A873C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		694C2BD025C1C4F700A873C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		694C2BD325C1C4F700A873C3 /* batstat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = batstat.xcdatamodel; sourceTree = "<group>"; };
 		694C2BD525C1C4F800A873C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		694C2BD825C1C4F800A873C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		694C2BDA25C1C4F800A873C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +56,6 @@
 		69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewController.swift; sourceTree = "<group>"; };
 		69D9C0D425C4059F005D4A8D /* InternalBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalBattery.swift; sourceTree = "<group>"; };
-		B40CAA5025CF0231008106C2 /* DesignCapacityHistoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCapacityHistoryContainer.swift; sourceTree = "<group>"; };
 		B40CAA5825CF04AD008106C2 /* BatHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatHistoryManager.swift; sourceTree = "<group>"; };
 		B4B24C8825CAA7CE0065C507 /* AdvancedPaneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPaneVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,12 +113,10 @@
 				B40CAA4F25CF01F3008106C2 /* DataPersistence */,
 				B4B24C8725CAA7820065C507 /* AdvancedDetailsTable */,
 				694C2BCE25C1C4F700A873C3 /* AppDelegate.swift */,
-				694C2BD025C1C4F700A873C3 /* ViewController.swift */,
 				694C2BD525C1C4F800A873C3 /* Assets.xcassets */,
 				694C2BD725C1C4F800A873C3 /* Main.storyboard */,
 				694C2BDA25C1C4F800A873C3 /* Info.plist */,
 				694C2BDB25C1C4F800A873C3 /* batstat.entitlements */,
-				694C2BD225C1C4F700A873C3 /* batstat.xcdatamodeld */,
 				69D9C0CE25C3F3FF005D4A8D /* EventMonitor.swift */,
 				69D9C0D025C3F756005D4A8D /* BatteryViewController.swift */,
 				69D9C0D425C4059F005D4A8D /* InternalBattery.swift */,
@@ -161,7 +153,6 @@
 		B40CAA4F25CF01F3008106C2 /* DataPersistence */ = {
 			isa = PBXGroup;
 			children = (
-				B40CAA5025CF0231008106C2 /* DesignCapacityHistoryContainer.swift */,
 				B40CAA5825CF04AD008106C2 /* BatHistoryManager.swift */,
 			);
 			path = DataPersistence;
@@ -313,14 +304,11 @@
 			files = (
 				69D9C0D225C3F756005D4A8D /* BatteryViewController.swift in Sources */,
 				690C3DD825D275B700DBB823 /* ChargeHistoryPaneVC.swift in Sources */,
-				694C2BD125C1C4F700A873C3 /* ViewController.swift in Sources */,
 				B4B24C8925CAA7CE0065C507 /* AdvancedPaneVC.swift in Sources */,
 				69D9C0D525C4059F005D4A8D /* InternalBattery.swift in Sources */,
-				B40CAA5125CF0231008106C2 /* DesignCapacityHistoryContainer.swift in Sources */,
 				694C2BCF25C1C4F700A873C3 /* AppDelegate.swift in Sources */,
 				69D9C0CF25C3F3FF005D4A8D /* EventMonitor.swift in Sources */,
 				B40CAA5925CF04AD008106C2 /* BatHistoryManager.swift in Sources */,
-				694C2BD425C1C4F700A873C3 /* batstat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +387,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -460,7 +448,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -640,19 +628,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		694C2BD225C1C4F700A873C3 /* batstat.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				694C2BD325C1C4F700A873C3 /* batstat.xcdatamodel */,
-			);
-			currentVersion = 694C2BD325C1C4F700A873C3 /* batstat.xcdatamodel */;
-			path = batstat.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 694C2BC325C1C4F700A873C3 /* Project object */;
 }

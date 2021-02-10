@@ -7,7 +7,8 @@
 //
 
 import Cocoa
-
+/* The charge history pane will display stored data about the battery health.
+    */
 class ChargeHistoryPaneVC: NSViewController {
     @IBOutlet weak var tableView: NSTableView!;
     var chargeHistory = [[String:String]]()
@@ -19,6 +20,7 @@ class ChargeHistoryPaneVC: NSViewController {
         // Do view setup here.
     }
     override func viewWillAppear() {
+        //Get the charge history, remove the first entry, which will always be the dummy data
         chargeHistory = BatHistoryManager.getStoredBatteryInfo();
         chargeHistory.remove(at: 0);
         print(chargeHistory)

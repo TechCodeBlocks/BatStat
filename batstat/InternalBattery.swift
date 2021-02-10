@@ -13,13 +13,11 @@ public struct InternalBattery{
     
     //Add temperature enum later
     
-    //Battery property Keys, currently only ones that will be used.
+    //Battery property Keys
     fileprivate enum Key: String {
         case Amperage           = "Amperage"
         case CurrentCapacity    = "CurrentCapacity"
-        //Add cycle count later
         case DesignCapacity     = "DesignCapacity"
-        //Add cycle count and fully charged indicators later
         case CycleCount         = "CycleCount"
         case IsCharging         = "IsCharging"
         case MaxCapacity        = "MaxCapacity"
@@ -31,8 +29,8 @@ public struct InternalBattery{
     fileprivate var service: io_service_t = 0;
     
     public init(){}
-    //Open connection to battery
     
+    //Open connection to battery
     public mutating func open() -> kern_return_t{
         if service != 0{
             return kIOReturnStillOpen
@@ -44,13 +42,13 @@ public struct InternalBattery{
         }
         return kIOReturnSuccess;
     }
-    
+    //Close connection to the battery
     public mutating func close()-> kern_return_t{
         let result = IOObjectRelease(service);
         service = 0;
         return result
     }
-    //return basic values all at once.
+    //return basic values all at once, for use in the pop-over.
     public func getPopoverBatteryInfo() -> (timeRemaining: String, batteryLevelPerc: Double, batteryDesCapPerc: Double){
         let timeLeft = timeRemaining();
         let currentCharge = currentCapacity();
@@ -62,6 +60,7 @@ public struct InternalBattery{
         
         
     }
+    //return details all at once for use in details screen.
     public func getBatteryDetailedInfo() -> [[String: String]]{
         let currentCharge: String =  String(currentCapacity()) + "mA h";
         let maxCharge: String = String(maxCapacity()) + "mA h";
@@ -109,7 +108,7 @@ public struct InternalBattery{
         let time = timeRemainingRaw();
         return NSString(format: "%d:%02d", time / 60, time%60) as String
     }
-    //Use to update the colour of the battery level indicator
+    //Used to update the colour of the battery level indicator
     public func isCharging() -> Bool{
         let retVal = IORegistryEntryCreateCFProperty(service, Key.IsCharging.rawValue as CFString!, kCFAllocatorDefault, 0);
         return retVal!.takeUnretainedValue() as! Bool;
